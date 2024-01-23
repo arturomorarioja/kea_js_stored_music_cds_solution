@@ -56,17 +56,6 @@ const createTableRow = (author, title, year) => {
     return trNew;
 }
 
-const showTable = () => { document.querySelector('table').classList.add('visible'); }
-
-// Upon page load, the CDs are loaded from localStorage
-const cds = localStorage.getItem(localStorageKey);
-if (cds !== null) {
-    JSON.parse(cds).forEach(cd => {
-        document.querySelector('table > tbody').appendChild(createTableRow(cd.author, cd.title, cd.year));
-    });
-    showTable();
-}
-
 // CD insertion
 document.querySelector('#frmCD').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -92,3 +81,14 @@ document.querySelector('#frmCD').addEventListener('submit', function(e) {
 
     this.reset();   // The form is reset
 });
+
+const showTable = () => { document.querySelector('table').classList.add('visible'); }
+
+// Upon page load, the CDs are loaded from localStorage
+const cds = localStorage.getItem(localStorageKey);
+if (cds !== null) {
+    JSON.parse(cds).forEach(cd => {
+        document.querySelector('table > tbody').appendChild(createTableRow(cd.author, cd.title, cd.year));
+    });
+    showTable();
+}
