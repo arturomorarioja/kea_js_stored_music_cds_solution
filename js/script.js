@@ -56,7 +56,7 @@ const createTableRow = (author, title, year) => {
     return trNew;
 }
 
-const showTable = () => { document.querySelector('table').style.visibility = 'visible'; }
+const showTable = () => { document.querySelector('table').classList.add('visible'); }
 
 // Upon page load, the CDs are loaded from localStorage
 const cds = localStorage.getItem(localStorageKey);
