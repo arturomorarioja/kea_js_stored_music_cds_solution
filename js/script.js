@@ -4,9 +4,6 @@ const localStorageKey = 'music-cds';
 
 /**
  * Deletes a CD from localStorage
- * @param {*} author 
- * @param {*} title 
- * @param {*} year 
  */
 const deleteCD = (author, title, year) => {
     let cds = JSON.parse(localStorage.getItem(localStorageKey));
@@ -19,9 +16,6 @@ const deleteCD = (author, title, year) => {
 
 /**
  * Creates a new table row with information about a music CD
- * @param {*} author 
- * @param {*} title 
- * @param {*} year 
  * @returns the new <tr> element
  */
 const createTableRow = (author, title, year) => {
